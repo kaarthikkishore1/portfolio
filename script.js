@@ -197,7 +197,7 @@ contactForm.addEventListener("submit", function (e) {
     window.location.href = `mailto:${TO}?subject=${subject}&body=${body}`;
   } else {
     // ✅ Laptop/Desktop → opens Gmail Compose in browser
-    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${TO}&su=${subject}&body=${body}`;
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=kaarthikkishoreg@gmail.com`;
     window.open(gmailLink, "_blank");
   }
 
