@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Full Stack Developer</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+
+<body>
+
+  <!-- Background Particles -->
+  <canvas id="particles"></canvas>
+
+  <!-- Top Floating Bar -->
+  <header class="topbar glass">
+    <div class="topbar-left">   
+      <a href="#home" class="icon-btn" title="Home"><i class="fa-solid fa-house"></i></a>
+      <a href="https://www.instagram.com/call_me_eternity/" target="_blank" class="icon-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://github.com/kaarthikkishore1" target="_blank" class="icon-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/kaarthik-kishore-g-278872376" target="_blank" class="icon-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+
+      <button id="themeBtn" class="icon-btn" title="Toggle Theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+
+    <a href="#contact" class="topbar-right">
+      <i class="fa-regular fa-envelope"></i>
+      <span>Get in touch</span>
+    </a>
+  </header>
+
+  <!-- HERO -->
+  <main id="home" class="hero">
+    <div class="rings">
+      <span class="ring ring1"></span>
+      <span class="ring ring2"></span>
+      <span class="ring ring3"></span>
+      <span class="ring ring4"></span>
+      <span class="ring ring5"></span>
+    </div>
+
+    <div class="hero-content">
+      <div class="avatar reveal" width 600px>
+        <img src="profile.jpeg" alt="profile" />
+      </div>
+
+      <p class="subrole reveal delay-1">FULL-STACK DEVELOPER</p>
+
+      <h1 class="title reveal delay-2">
+        <span id="typeText"></span><span class="cursor"></span>
+      </h1>
+
+      <div class="hero-actions reveal delay-3">
+        <a class="btn primary" href="#projects">
+          View Projects <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <a class="btn outline" href="./resume.pdf" download>
+          Download Resume <i class="fa-solid fa-file-arrow-down"></i>
+        </a>
+      </div>
+
+      <div class="pill-nav reveal delay-4">
+        <a href="#about" class="pill">About</a>
+        <a href="#experience" class="pill">Experience</a>
+        <a href="#education" class="pill">Education</a>
+        <a href="#skills" class="pill">Skills</a>
+        <a href="#projects" class="pill">Projects</a>
+        <a href="#blogs" class="pill">Blogs</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ABOUT -->
+  <section id="about" class="section about reveal">
+    <p class="section-kicker">A B O U T</p>
+    <h2 class="section-title">$:/whoami</h2>
+
+    <div class="about-grid">
+      <div class="about-img reveal delay-1">
+        <img src="portrait.jpeg" alt="About Photo" />
+      </div>
+
+      <div class="about-text reveal delay-2">
+        <span class="badge">
+          <span class="dot"></span> open to opportunities
+        </span>
+
+        <h3>Welcome to my digital abode!</h3>
+
+        <p>
+          Hi, I’m <b class="blue">Kaarthik Kishore</b>, a passionate <b class="blue">Full Stack Developer</b>
+  who loves building fast, responsive, and user-friendly web applications.
+        </p>
+
+        <p>
+          I build projects using <b class="blue">HTML, CSS, JavaScript, React, Node.js, MongoDB</b>
+  and I’m constantly learning new technologies to improve my skills.
+        </p>
+
+        <p>
+            My goal is to work on real-world projects, solve meaningful problems, and grow into a strong software engineer.
+            Apart from coding, I enjoy exploring tech trends, I explore new tech with a coffee ☕
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section experience">
+    <p class="section-kicker reveal">E X P E R I E N C E</p>
+
+    <div class="slider-wrap reveal delay-1">
+      <button class="slide-btn left" data-slide="exp"><i class="fa-solid fa-chevron-left"></i></button>
+
+      <div class="slider" id="expSlider">
+        <article class="exp-card">
+          <div class="exp-head">
+            <div class="exp-logo">⚫</div>
+            <div>
+              <h3>Human Resource Management (HRM)</h3>
+              <p class="muted">Holograd</p>
+            </div>
+          </div>
+
+          <p class="muted small">Nov 2024 - Jan 2025</p>
+          <ul>
+            <li>Built scalable APIs and product features.</li>
+            <li>Worked with Node.js and databases.</li>
+            <li>Improved UX and optimized performance.</li>
+          </ul>
+        </article>
+
+        <article class="exp-card">
+          <div class="exp-head">
+            <div class="exp-logo">🅿️</div>
+            <div>
+              <h3>Start up</h3>
+              <p class="muted">Straight View</p>
+            </div>
+          </div>
+
+          <p class="muted small">Sep 2025 - At Present </p>
+          <ul>
+            <li>Working In My Team In Mentor Roll</li>
+            <li>We provide a fast, user-friendly service/product that saves time and makes life easier.</li>
+            <li>Our goal is to grow step by step and help more people with affordable innovation.</li>
+          </ul>
+        </article>
+      </div>
+
+      <button class="slide-btn right" data-slide="exp"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+<section id="education" class="section education reveal">
+  <p class="section-kicker">E D U C A T I O N</p>
+
+  <div class="edu-timeline">
+
+    <div class="edu-item reveal delay-1">
+      <span class="edu-dot"></span>
+      <div class="edu-card glass">
+        <h3>🎓 Bachelor of Engineering (CSE)</h3>
+        <p class="muted">Mailam engineering college</p>
+        <p class="small muted">2024 - 2028</p>
+        <p class="edu-desc">
+          Focused on Web Development, DBMS, Cloud, Software Engineering and real-world projects.
+        </p>
+      </div>
+    </div>
+
+    <div class="edu-item reveal delay-2">
+      <span class="edu-dot"></span>
+      <div class="edu-card glass">
+        <h3>🏫 Higher Secondary</h3>
+        <p class="muted">Sacred Heart Convent Anglo Indian Higher Secondary School</p>
+        <p class="small muted">2022 – 2024</p>
+        <p class="edu-desc">
+          Completed with strong fundamentals in Maths, Computer Science and problem solving.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- SKILLS -->
+  <section id="skills" class="section skills">
+    <p class="section-kicker reveal">S K I L L S</p>
+
+    <div class="skills-bars reveal delay-1">
+      <div class="skill-bar">
+        <div class="skill-top"><span>HTML</span><span class="pct">95%</span></div>
+        <div class="bar"><span data-level="95"></span></div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="skill-top"><span>CSS</span><span class="pct">90%</span></div>
+        <div class="bar"><span data-level="90"></span></div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="skill-top"><span>JavaScript</span><span class="pct">88%</span></div>
+        <div class="bar"><span data-level="88"></span></div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="skill-top"><span>React</span><span class="pct">85%</span></div>
+        <div class="bar"><span data-level="85"></span></div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="skill-top"><span>Node.js</span><span class="pct">80%</span></div>
+        <div class="bar"><span data-level="80"></span></div>
+      </div>
+    </div>
+
+    <div class="skills-grid reveal delay-2">
+      <span class="skill-pill"><i class="fa-brands fa-html5"></i> HTML5</span>
+      <span class="skill-pill"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+      <span class="skill-pill"><i class="fa-brands fa-js"></i> JavaScript</span>
+      <span class="skill-pill"><i class="fa-brands fa-react"></i> React</span>
+      <span class="skill-pill"><i class="fa-brands fa-node-js"></i> Node.js</span>
+      <span class="skill-pill"><i class="fa-solid fa-database"></i> MongoDB</span>
+      <span class="skill-pill"><i class="fa-brands fa-git-alt"></i> Git</span>
+      <span class="skill-pill"><i class="fa-brands fa-github"></i> GitHub</span>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section projects reveal">
+    <p class="section-kicker">P R O J E C T S</p>
+
+    <div class="project-stage">
+      <button class="project-arrow left" data-slide="proj"><i class="fa-solid fa-chevron-left"></i></button>
+
+      <div class="project-slider" id="projSlider">
+
+        <article class="project-card">
+          <img class="proj-img" src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200&auto=format&fit=crop" alt="Project"/>
+          <div class="proj-body">
+            <h3>QuickFlow</h3>
+            <div class="proj-links">
+              <a href="#" target="_blank">Github ↗</a>
+              <a href="#" target="_blank">Live ↗</a>
+            </div>
+            <p>A productivity web app with modern UI + authentication + DB.</p>
+            <div class="stack">
+              <span>React</span><span>Node</span><span>MongoDB</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img class="proj-img" src="Donor.png" alt="Project"/>
+          <div class="proj-body">
+            <h3>Blood Donor Finder</h3>
+            <div class="proj-links">
+              <a href="https://github.com/kaarthikkishore1" target="_blank">Github ↗</a>
+              <a href="https://kaarthikkishore1.github.io/smart/" target="_blank">Live ↗</a>
+            </div>
+            <p>AI + IoT hospital monitoring dashboard with realtime tracking.</p>
+            <div class="stack">
+              <span>Next.js</span><span>Firebase</span><span>IoT</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img class="proj-img" src="./dis_pre.jpg" alt="Project"/>
+          <div class="proj-body">
+            <h3>Diasaster Preparedness Platform</h3>
+            <div class="proj-links">
+              <a href="https://github.com/Deepak-0616/disaster_preparedness_platform" target="_blank">Github ↗</a>
+              <a href="https://deepak-0616.github.io/disaster_preparedness_platform/" target="_blank">Live ↗</a>
+            </div>
+            <p>Diasaster monitoring platform with educational resources.</p>
+            <div class="stack">
+              <span>HTML5</span><span>CSS3</span><span>JS</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <button class="project-arrow right" data-slide="proj"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+
+  <!-- BLOGS -->
+  <section id="blogs" class="section blogs reveal">
+    <p class="section-kicker">B L O G S</p>
+
+    <div class="blog-grid">
+      <article class="blog-card big">
+        <a href="https://kaarthik.hashnode.dev/world-cup-2026-preview-everything-you-need-to-know"
+       target="_blank"
+       class="blog-card big blog-link">
+
+      <img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=1200&auto=format&fit=crop"
+           alt="Blog"/>
+
+      <div class="blog-body">
+        <h3>World Cup 2026 Preview: Everything You Need to Know</h3>
+        <p class="muted">Tech + Football blogs
+         The FIFA World Cup 2026 is not just another football tournament — it is going to be the biggest celebration of the sport the world has ever seen. For the first time in history, the World Cup will be hosted by three countries (USA, Canada, and Mexico), bringing together different cultures, stadium atmospheres, and fan experiences in one massive event. What makes it even more exciting is the new 48-team format, which means more nations will get a chance to compete on the world stage, more matches will be played, and the tournament will be filled with unexpected moments and underdog stories. From legendary teams like Brazil, Argentina, France, Germany, and England to rising powerhouses ready to surprise everyone, World Cup 2026 will be packed with drama, energy, and unforgettable matches. It will also be a stage for superstar players and young talents to shine under the brightest lights, creating memories that fans will talk about for generations. With modern mega-stadiums, passionate supporters, and the summer vibe of North America, this World Cup is expected to feel like a global festival where football becomes more than a game — it becomes an emotion shared by billions of people around the planet. 
+        </p>
+        <span class="read-more">Visit Blog →</span>
+      </div>
+
+    </a>
+      </article>
+
+      <article class="blog-card">
+       <a href="https://blogmars.hashnode.dev/opportunity-rover-the-mars-explorer-that-refused-to-quit?showSharer=true"
+     target="_blank"
+     class="blog-card blog-link">
+  <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=1200&auto=format&fit=crop" alt="Opportunity Rover Blog"/>
+  <div class="blog-body">
+    <h3>Opportunity Rover: The Mars Explorer That Refused to Quit</h3>
+    <p class="muted">A short story of NASA’s rover, its discoveries, and the mission that lasted 15 years.</p>
+    <span class="read-more">Read Blog →</span>
+  </div>
+</a>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-body">
+         <a href="https://blogstack.hashnode.dev/full-stack-developer-what-it-means-skills-you-need-and-roadmap-2026"
+     target="_blank"
+     class="blog-card blog-link">
+  <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Full Stack Blog"/>
+  <div class="blog-body">
+    <h3>Full-Stack Developer Roadmap</h3>
+    <p class="muted">Best roadmap for web dev in 2026.</p>
+    <span class="read-more">Read Blog →</span>
+  </div>
+</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact reveal">
+    <p class="section-kicker">C O N T A C T</p>
+
+    <h2 class="contact-title">connect with me on <a href="#" class="underline">socials</a>.</h2>
+
+    <div class="contact-links">
+      <a href="https://hashnode.com/@KishoreEmma" target="_blank">Blog ↗</a>
+      <a href="https://www.instagram.com/call_me_eternity/" target="_blank">Instagram ↗</a>
+      <a href="https://www.linkedin.com/in/kaarthik-kishore-g-278872376" target="_blank">Linkedin ↗</a>
+      <a href="https://github.com/kaarthikkishore1" target="_blank">Github ↗</a>
+    </div>
+
+    <!-- Contact Form -->
+<form class="contact-form glass reveal delay-1" id="contactForm">
+
+  <div class="form-row">
+    <input type="text" id="name" placeholder="Your Name" required />
+    <input type="email" id="email" placeholder="Your Email" required />
+  </div>
+
+  <textarea id="message" placeholder="Your Message" required></textarea>
+
+  <button type="submit" class="btn primary">
+    Send Message <i class="fa-solid fa-paper-plane"></i>
+  </button>
+
+</form>
+
+
+
+    <p class="contact-mail">
+      or drop a mail at <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kaarthikkishoreg@gmail.com">kaarthikkishoreg@gmail.com ↗</a>
+    </p>
+
+    <footer class="footer">
+      website designed and developed by <a href="#">Kaarthik Kishore ↗</a>
+    </footer>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

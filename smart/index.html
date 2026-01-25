@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🧪 Blood Donor Finder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Background animated bubbles -->
+  <div class="bubbles" aria-hidden="true">
+    <span class="bubble b1"></span>
+    <span class="bubble b2"></span>
+    <span class="bubble b3"></span>
+    <span class="bubble b4"></span>
+    <span class="bubble b5"></span>
+    <span class="bubble b6"></span>
+  </div>
+
+  <div class="wrap">
+
+    <!-- Header -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">🩸</div>
+        <div>
+          <h1>Blood Donor Finder</h1>
+          <p>Find donors fast • Save lives</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="getLocationBtn" class="btn">📍 Get My Location</button>
+        <button id="emergencyBtn" class="btn red pulse">🚨 Emergency</button>
+      </div>
+    </header>
+
+    <!-- Main grid -->
+    <main class="grid">
+
+      <!-- Donor Registration -->
+      <section class="card delay1">
+        <h2>👤 Donor Registration</h2>
+        <p class="hint">Register and help someone during emergencies.</p>
+
+        <form id="donorForm">
+
+          <div class="row">
+            <div>
+              <label>Full Name</label>
+              <input type="text" id="name" placeholder="Eg: Kaarthik" required />
+            </div>
+
+            <div>
+              <label>Blood Group</label>
+              <select id="bloodGroup" required>
+                <option value="">Select</option>
+                <option>A+</option><option>A-</option>
+                <option>B+</option><option>B-</option>
+                <option>O+</option><option>O-</option>
+                <option>AB+</option><option>AB-</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label>Phone Number</label>
+              <input type="tel" id="phone" placeholder="Eg: 9876543210" required />
+            </div>
+
+            <div>
+              <label>City</label>
+              <input type="text" id="city" placeholder="Eg: Chennai" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label>Area</label>
+              <input type="text" id="area" placeholder="Eg: Velachery" required />
+            </div>
+
+            <div>
+              <label>Availability</label>
+              <select id="available" required>
+                <option value="yes">✅ Available</option>
+                <option value="no">❌ Not Available</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label>Latitude (Auto)</label>
+              <input type="text" id="lat" placeholder="Click Get My Location" readonly />
+            </div>
+
+            <div>
+              <label>Longitude (Auto)</label>
+              <input type="text" id="lng" placeholder="Click Get My Location" readonly />
+            </div>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn red">➕ Add Donor</button>
+            <button type="button" id="clearAllBtn" class="btn">🗑 Clear All</button>
+          </div>
+
+          <div class="tag">📌 Uses LocalStorage + GPS + Distance (km)</div>
+        </form>
+      </section>
+
+      <!-- Search Donors -->
+      <section class="card delay2">
+        <h2>🔍 Find Donors</h2>
+        <p class="hint">Search by blood group + area and see distance.</p>
+
+        <div class="row">
+          <div>
+            <label>Blood Group</label>
+            <select id="searchGroup">
+              <option value="">Any</option>
+              <option>A+</option><option>A-</option>
+              <option>B+</option><option>B-</option>
+              <option>O+</option><option>O-</option>
+              <option>AB+</option><option>AB-</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Area</label>
+            <input type="text" id="searchArea" placeholder="Eg: Velachery" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="toggle-box">
+            <input type="checkbox" id="availableOnly" />
+            <label for="availableOnly" class="toggle-label">✅ Available donors only</label>
+          </div>
+
+          <div class="my-loc">
+            <span class="small">📍 My Location:</span>
+            <span id="myLocStatus" class="small muted">Not set</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="searchBtn" class="btn">🔎 Search</button>
+          <button id="showAllBtn" class="btn">📋 Show All</button>
+        </div>
+
+        <div id="results" class="results"></div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p>Made with ❤️ • Blood Donor Finder (Next Level)</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
