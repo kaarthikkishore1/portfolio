@@ -187,7 +187,7 @@ contactForm.addEventListener("submit", function (e) {
     `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
   );
 
-  const TO = "intent://sendto?to=kaarthikkishoreg@gmail.com#Intent;scheme=mailto;package=com.google.android.gm;end";
+  const TO = "mailto:kaarthikkishoreg@gmail.com?subject=Contact%20From%20Website&body=Hello%20Kishore";
 
   // ✅ Detect mobile devices
   const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
