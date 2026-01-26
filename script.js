@@ -187,7 +187,7 @@ contactForm.addEventListener("submit", function (e) {
     `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
   );
 
-  const TO = "mailto:straightview.team@gmail.com?subject=Project%20Inquiry&body=Hi%20Straight%20View,%0A%0AI%20want%20a%20website...";
+  const TO = "https://mail.google.com/mail/u/0/?fs=1&to=Kaarthikkishoreg@gmail.com&tf=cm";
 
   // ✅ Detect mobile devices
   const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
