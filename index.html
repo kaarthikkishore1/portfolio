@@ -366,20 +366,31 @@
     </div>
 
     <!-- Contact Form -->
-<form class="contact-form glass reveal delay-1" id="contactForm">
+<form id="contactForm" class="contactBox">
+  <div class="contactGrid">
+    <div class="field">
+      <input type="text" id="name" placeholder="Your Name" required />
+    </div>
 
-  <div class="form-row">
-    <input type="text" id="name" placeholder="Your Name" required />
-    <input type="email" id="email" placeholder="Your Email" required />
+    <div class="field">
+      <input type="email" id="email" placeholder="Your Email" required />
+    </div>
   </div>
 
-  <textarea id="message" placeholder="Your Message" required></textarea>
+  <div class="field full">
+    <textarea id="message" placeholder="Your Message" required></textarea>
+  </div>
 
-  <button type="submit" class="btn primary">
-    Send Message <i class="fa-solid fa-paper-plane"></i>
-  </button>
-
+  <div class="btnWrap">
+    <button type="button" id="sendBtn" class="sendBtn">
+      Send Message <span class="sendIcon">↗</span>
+    </button>
+  </div>
 </form>
+
+
+
+
 
 
 

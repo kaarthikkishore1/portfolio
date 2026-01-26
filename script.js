@@ -174,8 +174,6 @@ function drawParticles() {
 drawParticles();
 
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const sendBtn = document.getElementById("sendBtn");
 
