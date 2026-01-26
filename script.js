@@ -173,8 +173,45 @@ function drawParticles() {
 }
 drawParticles();
 
-const to = "kaarthikkishoreg@gmail.com";
-const subject = encodeURIComponent("Portfolio Contact Message");
-const body = encodeURIComponent("Hello Kishore");
 
-window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`, "_blank");
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sendBtn = document.getElementById("sendBtn");
+
+  if (!sendBtn) return;
+
+  sendBtn.addEventListener("click", () => {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !message) {
+      alert("Please fill all fields!");
+      return;
+    }
+
+    const toEmail = "kaarthikkishoreg@gmail.com";
+
+    const subject = `Portfolio Contact Message - ${name}`;
+    const body =
+      `Name: ${name}\n` +
+      `Email: ${email}\n\n` +
+      `Message:\n${message}`;
+
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    // ✅ MOBILE (opens Gmail/Mail app properly)
+    if (isMobile) {
+      window.location.href =
+        `mailto:${toEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      return;
+    }
+
+    // ✅ LAPTOP (opens Gmail web directly with TO filled)
+    window.open(
+      `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(toEmail)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
+      "_blank"
+    );
+  });
+});
