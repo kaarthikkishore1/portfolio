@@ -175,16 +175,34 @@ drawParticles();
 
 
 
-function sendMail() {
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
 
-  const to = "kaarthikkishoreg@gmail.com";
-  const subject = encodeURIComponent("New Contact Form Message");
-  const body = encodeURIComponent(
-    `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-  );
 
-  window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+
+  if (!form) return;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // stops page refresh
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !message) {
+      alert("Please fill all fields!");
+      return;
+    }
+
+    const to = "kaarthikkishoreg@gmail.com";
+    const subject = `Portfolio Contact Form - ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+
+    const mailtoLink = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoLink;
+
+    form.reset();
+  });
+});
