@@ -173,25 +173,8 @@ function drawParticles() {
 }
 drawParticles();
 
-const sendBtn = document.getElementById("sendBtn");
+const to = "kaarthikkishoreg@gmail.com";
+const subject = encodeURIComponent("Portfolio Contact Message");
+const body = encodeURIComponent("Hello Kishore");
 
-if (sendBtn) {
-  sendBtn.addEventListener("click", () => {
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    if (!name || !email || !message) {
-      alert("Fill all fields!");
-      return;
-    }
-
-    const to = "kaarthikkishoreg@gmail.com";
-    const subject = encodeURIComponent("New Message From Portfolio");
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    );
-
-    window.open(`mailto:${to}?subject=${subject}&body=${body}`, "_self");
-  });
-}
+window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`, "_blank");
