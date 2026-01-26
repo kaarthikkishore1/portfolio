@@ -187,7 +187,7 @@ contactForm.addEventListener("submit", function (e) {
     `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
   );
 
-  const TO = "mailto:kaarthikkishoreg@gmail.com";
+  const TO = "intent://sendto?to=kaarthikkishoreg@gmail.com#Intent;scheme=mailto;package=com.google.android.gm;end";
 
   // ✅ Detect mobile devices
   const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -197,7 +197,7 @@ contactForm.addEventListener("submit", function (e) {
     window.location.href = `mailto:${TO}?subject=${subject}&body=${body}`;
   } else {
     // ✅ Laptop/Desktop → opens Gmail Compose in browser
-    const gmailLink = `mailto:kaarthikkishoreg@gmail.com`;
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${TO}&su=${subject}&body=${body}`;
     window.open(gmailLink, "_blank");
   }
 
