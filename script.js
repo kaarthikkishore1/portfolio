@@ -187,7 +187,7 @@ contactForm.addEventListener("submit", function (e) {
     `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
   );
 
-  const TO = "https://mail.google.com/mail/u/0/?fs=1&to=kaarthikkishoreg@gmail.com&tf=cm";
+  const TO = "mailto:kaarthikkishoreg@gmail.com";
 
   // ✅ Detect mobile devices
   const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
