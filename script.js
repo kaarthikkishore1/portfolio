@@ -173,36 +173,33 @@ function drawParticles() {
 }
 drawParticles();
 
+const contactForm = document.getElementById("contactForm");
 
+contactForm.addEventListener("submit", function (e) {
+  e.preventDefault();
 
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
 
+  const subject = encodeURIComponent("Portfolio Contact Message");
+  const body = encodeURIComponent(
+    `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+  );
 
+  const TO = "mailto:kaarthikkishoreg@gmail.com";
 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contactForm");
+  // ✅ Detect mobile devices
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-  if (!form) return;
+  if (isMobile) {
+    // ✅ Mobile → opens Mail App
+    window.location.href = `mailto:${TO}?subject=${subject}&body=${body}`;
+  } else {
+    // ✅ Laptop/Desktop → opens Gmail Compose in browser
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${TO}&su=${subject}&body=${body}`;
+    window.open(gmailLink, "_blank");
+  }
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault(); // stops page refresh
-
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    if (!name || !email || !message) {
-      alert("Please fill all fields!");
-      return;
-    }
-
-    const to = "kaarthikkishoreg@gmail.com";
-    const subject = `Portfolio Contact Form - ${name}`;
-    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-
-    const mailtoLink = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    window.location.href = mailtoLink;
-
-    form.reset();
-  });
+  contactForm.reset();
 });
