@@ -174,6 +174,7 @@ function drawParticles() {
 drawParticles();
 
 
+
 document.addEventListener("DOMContentLoaded", () => {
   const sendBtn = document.getElementById("sendBtn");
 
@@ -190,22 +191,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const toEmail = "kaarthikkishoreg@gmail.com";
+
     const subject = `Portfolio Contact Message - ${name}`;
-    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    const body =
+      `Name: ${name}\n` +
+      `Email: ${email}\n\n` +
+      `Message:\n${message}`;
 
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-    // ✅ Mobile => open Mail app / Gmail app
+    // ✅ MOBILE (opens Gmail/Mail app properly)
     if (isMobile) {
       window.location.href =
         `mailto:${toEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       return;
     }
 
-    // ✅ Laptop => open Gmail Web Compose
+    // ✅ LAPTOP (opens Gmail web directly with TO filled)
     window.open(
       `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(toEmail)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
       "_blank"
     );
   });
 });
+
