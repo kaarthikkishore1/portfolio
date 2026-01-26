@@ -173,33 +173,25 @@ function drawParticles() {
 }
 drawParticles();
 
-const contactForm = document.getElementById("contactForm");
+const sendBtn = document.getElementById("sendBtn");
 
-contactForm.addEventListener("submit", function (e) {
-  e.preventDefault();
+if (sendBtn) {
+  sendBtn.addEventListener("click", () => {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
+    if (!name || !email || !message) {
+      alert("Fill all fields!");
+      return;
+    }
 
-  const subject = encodeURIComponent("Portfolio Contact Message");
-  const body = encodeURIComponent(
-    `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-  );
+    const to = "kaarthikkishoreg@gmail.com";
+    const subject = encodeURIComponent("New Message From Portfolio");
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    );
 
-  const TO = "mailto:kaarthikkishoreg@gmail.com";
-
-  // ✅ Detect mobile devices
-  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-  if (isMobile) {
-    // ✅ Mobile → opens Mail App
-    window.location.href = `mailto:${TO}?subject=${subject}&body=${body}`;
-  } else {
-    // ✅ Laptop/Desktop → opens Gmail Compose in browser
-    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${TO}&su=${subject}&body=${body}`;
-    window.open(gmailLink, "_blank");
-  }
-
-  contactForm.reset();
-});
+    window.open(`mailto:${to}?subject=${subject}&body=${body}`, "_self");
+  });
+}
